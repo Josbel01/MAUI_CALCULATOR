@@ -1,24 +1,14 @@
-﻿namespace Practica4_Calculadora_Daferlin
+﻿namespace Practica4_Calculadora_Daferlin;
+
+public partial class MainPage : ContentPage
 {
-    public partial class MainPage : ContentPage
+    public MainPage()
     {
-        int count = 0;
-
-        public MainPage()
-        {
-            InitializeComponent();
-        }
-
-        private void OnCounterClicked(object? sender, EventArgs e)
-        {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
-        }
+        InitializeComponent();
     }
+
+    private void OnNumberClicked(object sender, EventArgs e) { }
+    private void OnOperatorClicked(object sender, EventArgs e) { }
+    private void OnEqualsClicked(object sender, EventArgs e) { }
+    private void OnClearClicked(object sender, EventArgs e) { }
 }
