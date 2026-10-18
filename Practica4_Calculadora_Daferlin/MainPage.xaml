@@ -16,17 +16,21 @@
 
         <!-- Fila 0: Display -->
         <Border Grid.Row="0" Grid.ColumnSpan="4" Background="#F5F5F5"
-        Stroke="Transparent" StrokeShape="RoundRectangle 10"
-        Padding="15" Margin="0,0,0,20">
+                Stroke="Transparent" StrokeShape="RoundRectangle 10"
+                Padding="15" Margin="0,0,0,20">
             <VerticalStackLayout>
                 <Label x:Name="lblExpresion" Text="" FontSize="20"
-               HorizontalOptions="End" TextColor="Gray"
-               LineBreakMode="NoWrap" />
+                       HorizontalOptions="End" TextColor="Gray"
+                       LineBreakMode="NoWrap" />
                 <Label x:Name="lblDisplay" Text="0" FontSize="48"
-               HorizontalOptions="End" TextColor="Black"
-               LineBreakMode="NoWrap" />
+                       HorizontalOptions="End" TextColor="Black"
+                       LineBreakMode="NoWrap" />
+                <Label x:Name="lblHistorial" Text="" FontSize="12"
+                       HorizontalOptions="End" HorizontalTextAlignment="End"
+                       TextColor="Gray" LineBreakMode="TailTruncation" />
             </VerticalStackLayout>
         </Border>
+
         <!-- Fila 1: C, ÷, ×, - -->
         <Button Grid.Row="1" Grid.Column="0" Text="C" BackgroundColor="#FF6B6B" TextColor="White" Clicked="OnClearClicked" />
         <Button Grid.Row="1" Grid.Column="1" Text="÷" BackgroundColor="#4ECDC4" TextColor="White" Clicked="OnOperatorClicked" />
