@@ -8,6 +8,7 @@ public partial class MainPage : ContentPage
     private double segundoNumero = 0;
     private string operadorActual = "";
     private bool operacionPendiente = false;
+    private readonly List<string> historial = new();
 
     public MainPage()
     {
@@ -24,6 +25,17 @@ public partial class MainPage : ContentPage
 
         string segundo = operacionPendiente ? "" : lblDisplay.Text;
         lblExpresion.Text = $"{Fmt(primerNumero)} {operadorActual} {segundo}".TrimEnd();
+    }
+
+    // Guarda la operación al inicio de la lista y deja solo las últimas 3
+    private void AgregarAlHistorial(string operacion)
+    {
+        historial.Insert(0, operacion);
+
+        if (historial.Count > 3)
+            historial.RemoveAt(historial.Count - 1);
+
+        lblHistorial.Text = string.Join("\n", historial);
     }
 
     private void OnNumberClicked(object? sender, EventArgs e)
@@ -104,6 +116,7 @@ public partial class MainPage : ContentPage
         }
 
         lblDisplay.Text = Fmt(resultado);
+        AgregarAlHistorial($"{Fmt(primerNumero)} {operadorActual} {Fmt(segundoNumero)} = {Fmt(resultado)}");
 
         operadorActual = "";
         operacionPendiente = true;
