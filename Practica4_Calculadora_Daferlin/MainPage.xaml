@@ -25,9 +25,9 @@
                 <Label x:Name="lblDisplay" Text="0" FontSize="48"
                        HorizontalOptions="End" TextColor="Black"
                        LineBreakMode="NoWrap" />
-                <Label x:Name="lblHistorial" Text="" FontSize="12"
+                <Label x:Name="lblHistorial" Text="" FontSize="14"
                        HorizontalOptions="End" HorizontalTextAlignment="End"
-                       TextColor="Gray" LineBreakMode="TailTruncation" />
+                       TextColor="Gray" MaxLines="3" />
             </VerticalStackLayout>
         </Border>
 
